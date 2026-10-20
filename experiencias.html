@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Estilo Wix</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+    }
+
+    /* RODAPÉ */
+    .footer{
+        background:#176bb4;
+        color:white;
+        text-align:center;
+        padding:30px;
+        font-size:0.9rem;
+    }
+
+    body {
+        background: #d7d7e8;
+        font-size: 18px;
+        overflow-x: hidden;
+    }
+
+    .top-bar {
+        width: 100%;
+        background: #176bb4;
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .top-bar img {
+        height: 45px;
+    }
+
+    .top-bar h1 {
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .top-section {
+        width: 100%;
+        padding: 40px 0;
+        background: linear-gradient(to bottom, #c9c9dc, #d4d4e7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-title {
+        width: 90%;
+        max-width: 1500px;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .top-container {
+        width: 90%;
+        max-width: 1500px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 40px;
+    }
+
+    .right-text {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .right-text p {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .blue-section {
+        width: 100%;
+        background: #1d68a6;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+        background-size: 150px 150px;
+        padding: 80px 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+
+    .small-cards {
+        width: 90%;
+        max-width: 1500px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        color: #1a1a1a;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        height: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .big-card {
+        width: 90%;
+        max-width: 1500px;
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        margin-bottom: 60px;
+        color: #1a1a1a;
+
+        /* Apenas aumento da letra */
+        font-size: 1.3rem;
+        line-height: 1.55;
+    }
+
+    .big-card strong {
+        font-size: 1.4rem;
+    }
+
+    .back-btn {
+        margin: 35px auto;
+        display: inline-block;
+        padding: 12px 25px;
+        background: #fff;
+        color: #0077cc;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+    /* RESPONSIVIDADE PARA CELULAR */
+    @media (max-width: 768px) {
+
+        .top-bar {
+            padding: 10px 15px;
+            gap: 8px;
+        }
+
+        .top-bar img {
+            height: 35px;
+            max-width: 45px;
+            object-fit: contain;
+        }
+
+        .top-bar h1 {
+            font-size: 1.35rem;
+            letter-spacing: 0.5px;
+        }
+
+        .top-section {
+            padding: 30px 0;
+        }
+
+        .section-title {
+            width: 90%;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .top-container {
+            width: 90%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .right-text {
+            padding-left: 0;
+            padding-top: 20px;
+        }
+
+        .right-text p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .blue-section {
+            padding: 50px 0;
+        }
+
+        .small-cards {
+            width: 90%;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            height: auto;
+            min-height: 150px;
+        }
+
+        .big-card {
+            width: 90%;
+            padding: 25px;
+            margin-bottom: 40px;
+
+            /* Mantém a letra um pouco maior também no celular */
+            font-size: 1.05rem;
+            line-height: 1.55;
+
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .back-btn {
+            margin: 35px auto;
+            padding: 12px 25px;
+        }
+
+        .footer {
+            padding: 25px 15px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* CELULARES MENORES */
+    @media (max-width: 480px) {
+
+        .top-bar h1 {
+            font-size: 1.15rem;
+        }
+
+        .top-bar img {
+            height: 32px;
+            max-width: 40px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+        }
+
+        .top-container {
+            padding: 15px;
+        }
+
+        .right-text p {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .big-card {
+            padding: 20px;
+            font-size: 1.02rem;
+            line-height: 1.55;
+        }
+
+        .footer {
+            padding: 25px 10px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <img src="arararound.png">
+    <h1>MANUAL DO RECRUTA</h1>
+</div>
+
+<div class="top-section">
+    <h2 class="section-title">EXPERIÊNCIAS</h2>
+
+    <div class="top-container">
+
+        <div class="right-text">
+            <p>
+                Experiências de trabalhos anteriores são atividades profissionais que mostram suas habilidades e responsabilidades. Colocá-las no curriculo destaca sua competência e aumenta suas chances de conseguir uma vaga.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div class="blue-section">
+
+    <div class="small-cards">
+       
+    </div>
+
+    <!-- CARD GRANDE -->
+    <div class="big-card">
+
+<br>
+<strong>Informações esseciais:</strong><br>
+
+-Nome da Empresa: Inclua o nome da empresa onde trabalhou.<br>
+
+-Cargo Ocupado: Especifique o titulo do seu cargo.<br>
+
+-Periodo de Trabalho: Informe as datas de início e término (use "atual" se ainda estiver empregado).<br>
+<br>
+<strong>ATENÇÃO!</strong><br>
+
+-Em caso de cursos ou experiências tente ser objetivo, NÃO COLOCAR COISAS QUE NÃO TEM RELAÇÃO COM A VAGA.<br>
+
+-Exemplo: Vaga de cozinheiro e colocar na parte de experiências que já foi motorista de ônibus (A vaga não tem relação com essa expenência, logo é desnecessária para o curriculo).<br>
+<br>
+<strong>Descrição das Atividades:</strong><br>
+
+-Para cada experiência, descreva suas principais funções e responsabilidades.<br>
+
+-Utilize frases curtas e diretas, evitando jargões desnecessários.<br>
+<br>
+<strong>Resultados e Conquistas:</strong><br>
+
+-Sempre que possivel, inclua dados quantitativos que demonstrem seu impacto, como percentuais de aumento de vendas ou melhorias em processos, isso torna suas conquistas mais tangiveis e impressionantes.<br>
+<br>
+<strong>E se for o meu primeiro emprego?</strong><br>
+
+Nesse caso, coloque apenas cursos e atividades.<br>
+
+<br>
+<strong>Exemplo de experiências profissionais:</strong><br>
+
+2019-2025 Empresa X (atual)<br>
+
+Atuo como lider administrativo no setor financeiro. Desenvolvi muitos conhecimentos da área de finanças de grandes empresas.<br>
+Minhas responsabilidades:<br>
+Organizar emissões fiscais da compra de matéria prima da produção, repassar as respectivas atividades dos funcionários do setor financeiro, elaborar planilhas referentes ao lucro, mensal, semestral e anual da empresa.<br>
+Nesses anos que atuei com esforço e dedicação na minha respectiva area, os problemas financeiros envolvendo omissões fiscais diminuiu consideravelmente graças a minha organização com essa e outras responsabilidades.<br>
+
+        </p>
+    </div>
+
+</div>
+</div>
+
+<a href="curriculo.html" class="back-btn">⬅ Voltar</a>
+
+<div class="footer">
+    © 2026 Manual do Recruta - Todos os direitos reservados.
+</div>
+
+</body>
+</html>

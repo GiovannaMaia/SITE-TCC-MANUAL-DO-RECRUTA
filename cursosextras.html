@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Estilo Wix</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+    }
+
+/* RODAPÉ */
+.footer{
+    background:#176bb4;
+    color:white;
+    text-align:center;
+    padding:30px;
+    font-size:0.9rem;
+}
+
+    body {
+        background: #d7d7e8;
+    }
+
+    /* BARRA AZUL DO MANUAL DO RECRUTA */
+    .top-bar {
+        width: 100%;
+        background: #176bb4;
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .top-bar img {
+        height: 45px;
+    }
+
+    .top-bar h1 {
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    /* SEÇÃO SUPERIOR */
+    .top-section {
+        width: 100%;
+        padding: 40px 0;
+        background: linear-gradient(to bottom, #c9c9dc, #d4d4e7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .section-title {
+        width: 90%;
+        max-width: 1500px;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .top-container {
+        width: 90%;
+        max-width: 1500px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 40px;
+    }
+
+    .right-text {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .right-text p {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: #1a1a1a;
+        text-align: center;
+    }
+
+    /* SEÇÃO AZUL */
+    .blue-section {
+        width: 100%;
+        background: #1d68a6;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+        background-size: 150px 150px;
+        padding: 80px 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+
+    .big-card {
+        width: 90%;
+        max-width: 1500px;
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        margin-bottom: 60px;
+        color: #1a1a1a;
+    }
+
+    .big-card h3 {
+        margin-bottom: 15px;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    .big-card p {
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    .big-card p strong {
+        font-size: 1.4rem;
+    }
+
+    .big-card p a {
+        font-size: 1.2rem;
+    }
+
+    /* NOVA SEÇÃO "O QUE NÃO COLOCAR" */
+    .no-section {
+        width: 100%;
+        padding: 60px 0 100px 0;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .no-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 60px;
+        color: #1a1a1a;
+    }
+
+    .no-title span {
+        color: red;
+    }
+
+    .no-grid {
+        width: 90%;
+        max-width: 1500px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        text-align: center;
+    }
+
+    .no-item img {
+        width: 230px;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .no-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .no-item p {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        color: #333;
+    }
+
+    .back-btn {
+        margin: 35px auto;
+        display: inline-block;
+        padding: 12px 25px;
+        background: #fff;
+        color: #0077cc;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+
+    /* =========================================
+       RESPONSIVIDADE PARA CELULAR
+       ========================================= */
+
+    @media (max-width: 768px) {
+
+        .top-bar {
+            padding: 10px 15px;
+            gap: 8px;
+        }
+
+        .top-bar img {
+            height: 38px;
+            flex-shrink: 0;
+        }
+
+        .top-bar h1 {
+            font-size: 1.35rem;
+            letter-spacing: 0.5px;
+        }
+
+        .top-section {
+            padding: 30px 0;
+        }
+
+        .section-title {
+            width: 90%;
+            font-size: 1.3rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .top-container {
+            width: 90%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .right-text {
+            width: 100%;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .right-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .blue-section {
+            padding: 50px 0;
+        }
+
+        .big-card {
+            width: 90%;
+            padding: 25px;
+            margin-bottom: 35px;
+        }
+
+        .big-card h3 {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .big-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .big-card a {
+            word-break: break-all;
+        }
+
+        .no-section {
+            padding: 45px 0 70px 0;
+        }
+
+        .no-title {
+            width: 90%;
+            font-size: 1.6rem;
+            line-height: 1.4;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .no-grid {
+            width: 90%;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .no-item img {
+            width: 200px;
+            max-width: 100%;
+        }
+
+        .no-item h3 {
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .no-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .back-btn {
+            margin: 30px auto;
+            padding: 12px 25px;
+        }
+
+        .footer {
+            padding: 25px 15px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+    }
+
+
+    /* =========================================
+       CELULARES MUITO PEQUENOS
+       ========================================= */
+
+    @media (max-width: 400px) {
+
+        .top-bar {
+            padding: 10px;
+            gap: 6px;
+        }
+
+        .top-bar img {
+            height: 34px;
+        }
+
+        .top-bar h1 {
+            font-size: 1.15rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+        }
+
+        .top-container {
+            padding: 15px;
+        }
+
+        .right-text p {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .big-card {
+            padding: 20px;
+        }
+
+        .big-card h3 {
+            font-size: 1.15rem;
+        }
+
+        .big-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .no-title {
+            font-size: 1.4rem;
+        }
+
+        .no-item img {
+            width: 180px;
+        }
+
+        .no-item h3 {
+            font-size: 1.1rem;
+        }
+
+        .no-item p {
+            font-size: 0.95rem;
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- BARRA AZUL SUPERIOR -->
+<div class="top-bar">
+    <img src="arararound.png" alt="Logo Arara Azul">
+    <h1>MANUAL DO RECRUTA</h1>
+</div>
+
+<!-- SEÇÃO SUPERIOR -->
+<div class="top-section">
+
+    <h2 class="section-title">SEJAM SEMPRE HONESTO(A)S NO SEU CURRÍCULO</h2>
+
+    <div class="top-container">
+
+        <div class="right-text">
+            <p>
+                Mesmo que suas experiências pessoais pareçam insuficientes, todas as habilidades e formações que estiverem em seu currículo serão testadas e\ou usadas na vaga oferecida. Nessas circunstâncias pode acarretar em eliminação do processo seletivo ou futuramente demissão por justa causa.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SEÇÃO AZUL COM RETÂNGULO PRINCIPAL -->
+<div class="blue-section">
+
+    <div class="big-card">
+        <h3>Onde posso aprimorar as minhas formações?</h3>
+        <p>
+    <strong>Fundação Bradesco</strong> – Com cursos e certificados disponíveis de forma gratuita de diversas áreas para turbinar ainda mais seu currículo!!  
+    <br>
+    <a href="https://www.ev.org.br/" target="_blank">https://www.ev.org.br/</a>
+    <br><br>
+
+    <strong>Santander Open Academy</strong> – Mais de 1.000 cursos, conteúdos e bolsas de estudo para te apoiar no acesso a melhores oportunidades.  
+    <br>
+    <a href="https://www.santanderopenacademy.com/" target="_blank">https://www.santanderopenacademy.com/</a>
+    <br><br>
+
+    <strong>Kultivi</strong> – Todos merecem a oportunidade de aprender.  
+    <br>
+    <a href="https://kultivi.com" target="_blank">https://kultivi.com</a>
+    <br><br>
+
+    <strong>PUCRS Online</strong> – A melhor experiência digital em educação está aqui.  
+    <br>
+    <a href="https://online.pucrs.br/formacao-gratuita" target="_blank">
+        https://online.pucrs.br/formacao-gratuita
+    </a>
+    <br><br>
+
+    <strong>Aprenda Mais</strong> – Plataforma de cursos abertos e online da Rede Federal.  
+    <br>
+    <a href="https://aprendamais.mec.gov.br" target="_blank">https://aprendamais.mec.gov.br</a>
+    <br><br>
+
+    <strong>Escola Virtual</strong> – Uma solução para a oferta de capacitação a distância no serviço público brasileiro.  
+    <br>
+    <a href="https://www.escolavirtual.gov.br/catalogo" target="_blank">
+        https://www.escolavirtual.gov.br/catalogo
+    </a>
+</p>
+ </div>
+
+</div>
+</div>
+
+<a href="curriculo.html" class="back-btn">⬅ Voltar</a>
+
+<div class="footer">
+    © 2026 Manual do Recruta - Todos os direitos reservados.
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,529 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Currículo</title><style>
+
+*{
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin:0;
+    padding:30px;
+    background:#f2f2f2;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+/* FORMULÁRIO */
+
+.form{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+}
+
+.form h2{
+    margin-bottom:20px;
+}
+
+.form label{
+    font-weight:bold;
+    display:block;
+    margin-top:15px;
+}
+
+.form input,
+.form textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.form textarea{
+    min-height:80px;
+    resize:vertical;
+}
+
+/* BOTÕES */
+
+.download-btn{
+    margin-top:20px;
+    padding:12px;
+    width:100%;
+    font-size:16px;
+    font-weight:bold;
+    background:#000;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.download-btn:hover{
+    opacity:0.9;
+}
+
+/* CURRÍCULO */
+
+.cv{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+}
+
+.name{
+    font-size:36px;
+    font-weight:bold;
+}
+
+.role{
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.line{
+    border-top:2px solid #000;
+    margin:15px 0;
+}
+
+.contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-bottom:20px;
+}
+
+.section-title{
+    font-weight:bold;
+    margin-top:25px;
+    margin-bottom:10px;
+}
+
+.section{
+    white-space:pre-line;
+}
+
+/* IMPRESSÃO */
+
+
+@media print{
+
+body{
+    background:white;
+    padding:0;
+}
+
+.form,
+.download-btn,
+a.back-btn,
+.back-btn{
+    display:none !important;
+    visibility:hidden !important;
+}
+
+.container{
+    grid-template-columns:1fr;
+}
+
+.cv{
+    padding:0;
+    border-radius:0;
+}
+
+}
+
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+}
+.back-btn {
+    margin: 35px auto;
+    display: inline-block;
+    padding: 12px 25px;
+    background: #fff;
+    color: #0077cc;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+    }
+</style></head><body><div class="container"><!-- FORMULÁRIO -->
+
+<div class="form">
+
+    <h2>Preencha seu currículo</h2>
+
+    <label>Nome</label>
+    <input id="nome">
+
+    <label>Cargo</label>
+    <input id="cargo">
+
+    <label>Telefone</label>
+    <input id="telefone">
+
+    <label>Email</label>
+    <input id="email">
+
+    <label>Endereço</label>
+    <input id="endereco" placeholder="Cidade - Estado">
+
+    <label>Objetivo</label>
+    <textarea id="objetivo"></textarea>
+
+    <label>Formação</label>
+    <textarea id="formacao"></textarea>
+
+    <label>Experiência</label>
+    <textarea id="experiencia"></textarea>
+
+    <label>Cursos complementares</label>
+    <textarea id="cursos"></textarea>
+
+    <label>Atividades extracurriculares</label>
+    <textarea id="atividades"></textarea>
+
+    <label>Habilidades</label>
+    <textarea id="habilidades"></textarea>
+
+    <!-- BOTÃO PDF -->
+
+    <button class="download-btn" onclick="window.print()">
+        Baixar / Salvar em PDF
+    </button>
+
+    <!-- BOTÃO PERFIL -->
+
+    <button class="download-btn" onclick="salvarNaGaleria()">
+        Salvar no Meu Perfil
+    </button>
+
+</div>
+
+
+<!-- CURRÍCULO -->
+
+<div class="cv">
+
+    <div class="name" id="cvNome">SEU NOME</div>
+
+    <div class="role" id="cvCargo">Seu cargo</div>
+
+    <div class="line"></div>
+
+    <div class="contact">
+
+        <div id="cvTelefone">Telefone</div>
+
+        <div id="cvEmail">Email</div>
+
+        <div id="cvEndereco">Endereço</div>
+
+    </div>
+
+    <div class="line"></div>
+
+
+    <!-- OBJETIVO -->
+
+    <div id="secObjetivo">
+
+        <div class="section-title">OBJETIVO</div>
+
+        <div class="section" id="cvObjetivo"></div>
+
+    </div>
+
+
+    <!-- FORMAÇÃO -->
+
+    <div id="secFormacao">
+
+        <div class="section-title">FORMAÇÃO</div>
+
+        <div class="section" id="cvFormacao"></div>
+
+    </div>
+
+
+    <!-- EXPERIÊNCIAS -->
+
+    <div id="secExperiencia">
+
+        <div class="section-title">EXPERIÊNCIAS</div>
+
+        <div class="section" id="cvExperiencia"></div>
+
+    </div>
+
+
+    <!-- CURSOS -->
+
+    <div id="secCursos">
+
+        <div class="section-title">
+            CURSOS COMPLEMENTARES
+        </div>
+
+        <div class="section" id="cvCursos"></div>
+
+    </div>
+
+
+    <!-- ATIVIDADES EXTRACURRICULARES -->
+
+    <div id="secAtividades">
+
+        <div class="section-title">
+            ATIVIDADES EXTRACURRICULARES
+        </div>
+
+        <div class="section" id="cvAtividades"></div>
+
+    </div>
+
+
+    <!-- HABILIDADES -->
+
+    <div id="secHabilidades">
+
+        <div class="section-title">HABILIDADES</div>
+
+        <div class="section" id="cvHabilidades"></div>
+
+    </div>
+
+</div>
+
+</div><script>
+
+/* =========================
+MOSTRAR / ESCONDER SEÇÕES
+========================= */
+
+function toggleSection(sectionId, value){
+
+    document.getElementById(sectionId).style.display =
+        value.trim() ? "block" : "none";
+
+}
+
+
+/* =========================
+ATUALIZAR CURRÍCULO
+========================= */
+
+function update(){
+
+    /* DADOS PRINCIPAIS */
+
+    cvNome.textContent = nome.value || "SEU NOME";
+
+    cvCargo.textContent = cargo.value || "Seu cargo";
+
+    cvTelefone.textContent = telefone.value;
+
+    cvEmail.textContent = email.value;
+
+    cvEndereco.textContent = endereco.value;
+
+
+    /* CONTEÚDOS */
+
+    cvObjetivo.innerText = objetivo.value;
+
+    cvFormacao.innerText = formacao.value;
+
+    cvExperiencia.innerText = experiencia.value;
+
+    cvCursos.innerText = cursos.value;
+
+    cvAtividades.innerText = atividades.value;
+
+    cvHabilidades.innerText = habilidades.value;
+
+
+    /* SEÇÕES OPCIONAIS */
+
+    toggleSection("secObjetivo", objetivo.value);
+
+    toggleSection("secFormacao", formacao.value);
+
+    toggleSection("secExperiencia", experiencia.value);
+
+    toggleSection("secCursos", cursos.value);
+
+    toggleSection("secAtividades", atividades.value);
+
+    toggleSection("secHabilidades", habilidades.value);
+
+
+    /* SALVAR AUTOMATICAMENTE */
+
+    localStorage.setItem("cv_nome", nome.value);
+
+    localStorage.setItem("cv_cargo", cargo.value);
+
+    localStorage.setItem("cv_telefone", telefone.value);
+
+    localStorage.setItem("cv_email", email.value);
+
+    localStorage.setItem("cv_endereco", endereco.value);
+
+    localStorage.setItem("cv_objetivo", objetivo.value);
+
+    localStorage.setItem("cv_formacao", formacao.value);
+
+    localStorage.setItem("cv_experiencia", experiencia.value);
+
+    localStorage.setItem("cv_cursos", cursos.value);
+
+    localStorage.setItem("cv_atividades", atividades.value);
+
+    localStorage.setItem("cv_habilidades", habilidades.value);
+
+}
+
+
+/* =========================
+CARREGAR DADOS
+========================= */
+
+function carregarDados(){
+
+    nome.value =
+        localStorage.getItem("cv_nome") || "";
+
+    cargo.value =
+        localStorage.getItem("cv_cargo") || "";
+
+    telefone.value =
+        localStorage.getItem("cv_telefone") || "";
+
+    email.value =
+        localStorage.getItem("cv_email") || "";
+
+    endereco.value =
+        localStorage.getItem("cv_endereco") || "";
+
+    objetivo.value =
+        localStorage.getItem("cv_objetivo") || "";
+
+    formacao.value =
+        localStorage.getItem("cv_formacao") || "";
+
+    experiencia.value =
+        localStorage.getItem("cv_experiencia") || "";
+
+    cursos.value =
+        localStorage.getItem("cv_cursos") || "";
+
+    atividades.value =
+        localStorage.getItem("cv_atividades") || "";
+
+    habilidades.value =
+        localStorage.getItem("cv_habilidades") || "";
+
+    update();
+
+}
+
+
+/* =========================
+SALVAR NO PERFIL
+========================= */
+
+function salvarNaGaleria(){
+
+    const nomeCurriculo = prompt(
+        "Digite um nome para este currículo:"
+    );
+
+    if(!nomeCurriculo) return;
+
+
+    const curriculo = {
+
+        nomeCurriculo:nomeCurriculo,
+
+        nome:nome.value,
+
+        cargo:cargo.value,
+
+        telefone:telefone.value,
+
+        email:email.value,
+
+        endereco:endereco.value,
+
+        objetivo:objetivo.value,
+
+        formacao:formacao.value,
+
+        experiencia:experiencia.value,
+
+        cursos:cursos.value,
+
+        atividades:atividades.value,
+
+        habilidades:habilidades.value
+
+    };
+
+
+    let lista = JSON.parse(
+        localStorage.getItem("curriculos")
+    ) || [];
+
+
+    lista.push(curriculo);
+
+
+    localStorage.setItem(
+        "curriculos",
+        JSON.stringify(lista)
+    );
+
+
+    alert("Currículo salvo no Meu Perfil!");
+
+}
+
+
+/* =========================
+ATUALIZAÇÃO AUTOMÁTICA
+========================= */
+
+document.querySelectorAll("input, textarea").forEach(el => {
+
+    el.addEventListener("input", update);
+
+});
+
+
+/* =========================
+INICIAR
+========================= */
+
+carregarDados();
+
+</script></div>
+<a href="meuperfil.html" class="back-btn">⬅ Voltar</a>
+</body>
+</html>

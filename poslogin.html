@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual do Recruta - Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ======== RESET ======== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #00aaff, #0077cc);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    /* ======== MENU ======== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.3em;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffeb3b;
+    }
+
+    /* ======== CONTATO ======== */
+    .contact {
+      position: relative;
+    }
+
+    .contact-email {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+  
+
+    .contact:hover .contact-email {
+      display: block;
+    }
+
+    /* ======== MENU HAMBÚRGUER ======== */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 28px;
+      height: 3px;
+      background: white;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    /* ======== RESPONSIVO ======== */
+    @media (max-width: 768px) {
+
+      body {
+        justify-content: flex-start;
+        padding-top: 100px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        padding: 15px 0;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      /* CONTATO NO CELULAR */
+      .contact-email {
+        position: static;
+        margin-top: 8px;
+        white-space: normal;
+        text-align: center;
+        display: none;
+      }
+
+      .contact.active .contact-email {
+        display: block;
+      }
+
+      .contact:hover .contact-email {
+        display: none;
+      }
+
+      .contact.active:hover .contact-email {
+        display: block;
+      }
+    }
+
+    /* ======== CARDS ======== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      width: 80%;
+      max-width: 900px;
+    }
+
+    .card {
+      background: white;
+      color: #0077cc;
+      border-radius: 16px;
+      padding: 40px 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2em;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .imglg {
+      width: 80px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ======== MENU ======== -->
+  <nav>
+
+    <a href="index.html">
+      <img src="arararound.png" alt="Logo Arara Azul" class="imglg">
+    </a>
+
+    <div class="logo">MANUAL DO RECRUTA</div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Início</a>
+      <a href="meuperfil.html">Meu perfil</a>
+      <a href="sobre.html">Sobre</a>
+      
+
+      <div class="contact">
+        <a href="#" id="contact-link">Contato</a>
+        <div class="contact-email">
+          email: manualdorecrutatcc@gmail.com<br>
+          instagram: @manual.do.recruta_
+        </div>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- ======== CONTEÚDO ======== -->
+  <h1>Escolha um tema para começar</h1>
+
+  <div class="cards">
+    <a href="curriculo.html" class="card">Currículo</a>
+    <a href="entrevista.html" class="card">Entrevista</a>
+  </div>
+
+  <script>
+
+    const toggle = document.getElementById("menu-toggle");
+    const links = document.getElementById("nav-links");
+    const contact = document.querySelector(".contact");
+    const contactLink = document.getElementById("contact-link");
+
+    toggle.addEventListener("click", () => {
+      links.classList.toggle("active");
+    });
+
+    contactLink.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (window.innerWidth <= 768) {
+        contact.classList.toggle("active");
+      }
+    });
+
+  </script>
+
+</body>
+</html>

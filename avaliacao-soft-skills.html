@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avaliação de Soft Skills</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background: linear-gradient(135deg, #d7d7e8, #c2c2dd);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    width: 90%;
+    max-width: 900px;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+    transition: filter 0.25s ease;
+}
+
+.blur {
+    filter: blur(6px);
+}
+
+/* QUESTIONÁRIO */
+
+h1 {
+    text-align: center;
+    color: #176bb4;
+    margin-bottom: 20px;
+}
+
+.counter {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.question {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    border: 2px solid #176bb4;
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    color: #176bb4;
+    transition: 0.3s;
+}
+
+.option:hover {
+    background: #176bb4;
+    color: white;
+}
+
+/* BOTÃO VOLTAR */
+
+.back-btn {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.back-btn button {
+    background: transparent;
+    border: 2px solid #176bb4;
+    color: #176bb4;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn button:hover {
+    background: #176bb4;
+    color: white;
+}
+
+.back-btn button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* RESULTADO */
+
+.result {
+    display: none;
+}
+
+.result h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #176bb4;
+    font-size: 2rem;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+}
+
+.bar {
+    background: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 14px;
+    background: #1d68a6;
+    width: 0%;
+}
+
+/* BOTÃO VOLTAR DO RESULTADO */
+
+.result .back-btn {
+    margin: 35px auto 0;
+    display: block;
+    width: fit-content;
+}
+
+.result .back-btn a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #fff;
+    color: #0077cc;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+    border: none;
+}
+
+.result .back-btn a:hover {
+    background: #0077cc;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+
+    <div id="quiz">
+
+        <h1>Avaliação de Soft Skills</h1>
+
+        <div class="counter" id="counter"></div>
+
+        <div class="question" id="question"></div>
+
+        <div class="options" id="options"></div>
+
+        <div class="back-btn">
+            <button
+                id="backBtn"
+                onclick="goBack()"
+                disabled
+            >
+                Voltar
+            </button>
+        </div>
+
+    </div>
+
+    <div class="result" id="result">
+
+        <h2>O resultado do seu teste é</h2>
+
+        <div id="skills"></div>
+
+        <div class="back-btn">
+            <a href="curriculo.html">⬅ Voltar</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const questions = [
+
+    "Penso sobre qualquer tópico de forma objetiva e crítica",
+    "Construo e avalio argumentos, considerando diferentes perspectivas",
+    "Converso, escuto ativamente e aprendo com os outros",
+    "Sempre sou curioso(a) sobre diferentes assuntos",
+    "Analiso informações antes de aceitá-las como verdadeiras",
+    "Estou disposto(a) a mudar de ideia",
+    "Defino prioridades",
+    "Cumpro horários",
+    "Não tenho vergonha de pedir ajuda",
+    "Executo tarefas com eficácia",
+    "Resolvo conflitos sem culpar alguém ou a mim mesmo",
+    "Aceito críticas construtivas",
+    "Adapto a minha linguagem de acordo com o ambiente em que estou",
+    "Sou bom negociador",
+    "Aprendo com erros"
+
+];
+
+/*
+    Cada número indica qual soft skill
+    corresponde à pergunta.
+
+    0 = Criatividade
+    1 = Adaptabilidade
+    2 = Interação e relações interpessoais
+    3 = Liderança e tomada de decisão
+    4 = Apoio e cooperação
+    5 = Análise e interpretação
+    6 = Empreendedorismo e performance
+    7 = Organização e execução
+*/
+
+const skillMap = [
+
+    0,  // Pergunta 1
+    0,  // Pergunta 2
+    0,  // Pergunta 3
+    5,  // Pergunta 4
+    2,  // Pergunta 5
+    5,  // Pergunta 6
+    0,  // Pergunta 7
+    5,  // Pergunta 8
+    5,  // Pergunta 9
+    1,  // Pergunta 10
+    7,  // Pergunta 11
+    7,  // Pergunta 12
+    7,  // Pergunta 13
+    3,  // Pergunta 14
+    7   // Pergunta 15
+
+];
+
+const skillNames = [
+
+    "Criatividade",
+    "Adaptabilidade",
+    "Interação e relações interpessoais",
+    "Liderança e tomada de decisão",
+    "Apoio e cooperação",
+    "Análise e interpretação",
+    "Empreendedorismo e performance",
+    "Organização e execução"
+
+];
+
+/*
+    Pontuação:
+    
+    Discordo totalmente = 0
+    Discordo parcialmente = 1
+    Concordo parcialmente = 2
+    Concordo totalmente = 3
+*/
+
+const scores = Array(8).fill(0);
+const questionCount = Array(8).fill(0);
+
+const answers = [];
+
+let current = 0;
+
+const card = document.getElementById("card");
+const questionEl = document.getElementById("question");
+const counterEl = document.getElementById("counter");
+const optionsEl = document.getElementById("options");
+const backBtn = document.getElementById("backBtn");
+
+
+/* TRANSIÇÃO */
+
+function blurTransition(callback) {
+
+    card.classList.add("blur");
+
+    setTimeout(() => {
+
+        callback();
+
+        card.classList.remove("blur");
+
+    }, 200);
+
+}
+
+
+/* CARREGAR QUESTÃO */
+
+function loadQuestion() {
+
+    blurTransition(() => {
+
+        counterEl.textContent =
+            `Questão ${current + 1} de ${questions.length}`;
+
+        questionEl.textContent =
+            questions[current];
+
+        optionsEl.innerHTML = "";
+
+        const labels = [
+
+            "Discordo totalmente",
+            "Discordo parcialmente",
+            "Concordo parcialmente",
+            "Concordo totalmente"
+
+        ];
+
+        labels.forEach((label, i) => {
+
+            const div =
+                document.createElement("div");
+
+            div.className = "option";
+
+            div.textContent = label;
+
+            div.onclick = () => answer(i);
+
+            optionsEl.appendChild(div);
+
+        });
+
+        backBtn.disabled = current === 0;
+
+    });
+
+}
+
+
+/* RESPONDER */
+
+function answer(value) {
+
+    /*
+        Se o usuário já respondeu essa pergunta
+        e voltou para ela, removemos a resposta anterior.
+    */
+
+    if (answers[current] !== undefined) {
+
+        const oldValue = answers[current];
+        const oldSkill = skillMap[current];
+
+        scores[oldSkill] -= oldValue;
+
+    } else {
+
+        const skill = skillMap[current];
+
+        questionCount[skill]++;
+
+    }
+
+    /* Salva a nova resposta */
+
+    answers[current] = value;
+
+    const skill = skillMap[current];
+
+    scores[skill] += value;
+
+    current++;
+
+    if (current < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showResult();
+
+    }
+
+}
+
+
+/* VOLTAR */
+
+function goBack() {
+
+    const prev = current - 1;
+
+    if (prev < 0) return;
+
+    current = prev;
+
+    loadQuestion();
+
+}
+
+
+/* MOSTRAR RESULTADO */
+
+function showResult() {
+
+    document.getElementById("quiz").style.display = "none";
+
+    const skillsDiv =
+        document.getElementById("skills");
+
+    document.getElementById("result").style.display = "block";
+
+    skillsDiv.innerHTML = "";
+
+    let resultadosFinais = [];
+
+    skillNames.forEach((name, i) => {
+
+        /*
+            Cada pergunta vale no máximo 3 pontos.
+
+            Exemplo:
+            2 perguntas × 3 pontos = 6 pontos máximos.
+
+            Se a pessoa fizer 4 pontos:
+            4 ÷ 6 × 100 = 67%
+        */
+
+        let percent = 0;
+
+        if (questionCount[i] > 0) {
+
+            const maxScore =
+                questionCount[i] * 3;
+
+            percent = Math.round(
+                (scores[i] / maxScore) * 100
+            );
+
+        }
+
+        resultadosFinais.push(percent);
+
+        skillsDiv.innerHTML += `
+
+        <div class="skill">
+
+            <div class="skill-header">
+
+                <span>${name}</span>
+
+                <span>${percent}%</span>
+
+            </div>
+
+            <div class="bar">
+
+                <div
+                    class="fill"
+                    style="width:${percent}%"
+                ></div>
+
+            </div>
+
+        </div>`;
+
+    });
+
+    /* SALVAR RESULTADOS */
+
+    localStorage.setItem(
+        "softSkills",
+        JSON.stringify(resultadosFinais)
+    );
+
+}
+
+
+/* INICIAR */
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
+

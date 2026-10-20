@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Estilo Wix</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+    }
+
+    /* RODAPÉ */
+    .footer{
+        background:#176bb4;
+        color:white;
+        text-align:center;
+        padding:30px;
+        font-size:0.9rem;
+    }
+
+    body {
+        background: #d7d7e8;
+        font-size: 18px;
+        overflow-x: hidden;
+    }
+
+    .top-bar {
+        width: 100%;
+        background: #176bb4;
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .top-bar img {
+        height: 45px;
+    }
+
+    .top-bar h1 {
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .top-section {
+        width: 100%;
+        padding: 40px 0;
+        background: linear-gradient(to bottom, #c9c9dc, #d4d4e7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-title {
+        width: 90%;
+        max-width: 1500px;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .top-container {
+        width: 80%;
+        max-width: 1500px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 40px;
+    }
+
+    .right-text {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .right-text p {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .blue-section {
+        width: 100%;
+        background: #1d68a6;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+        background-size: 150px 150px;
+        padding: 80px 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+
+    .small-cards {
+        width: 90%;
+        max-width: 1500px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        color: #1a1a1a;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        height: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card strong {
+        font-size: 1.3rem;
+    }
+
+    .big-card {
+        width: 90%;
+        max-width: 1500px;
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        margin-bottom: 60px;
+        color: #1a1a1a;
+        font-size: 1.2rem;
+        line-height: 1.7;
+    }
+
+    .big-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .big-card strong {
+        font-size: 1.5rem;
+    }
+
+    .big-card p {
+        font-size: 1.3rem;
+        line-height: 1.8;
+    }
+
+    .back-btn {
+        margin: 35px auto;
+        display: inline-block;
+        padding: 12px 25px;
+        background: #fff;
+        color: #0077cc;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+    /* RESPONSIVIDADE PARA CELULAR */
+    @media (max-width: 768px) {
+
+        .top-bar {
+            padding: 10px 15px;
+            gap: 8px;
+        }
+
+        .top-bar img {
+            height: 35px;
+            width: auto;
+        }
+
+        .top-bar h1 {
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .top-section {
+            padding: 30px 0;
+        }
+
+        .section-title {
+            width: 90%;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .top-container {
+            width: 90%;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .right-text {
+            padding-left: 0;
+            padding-top: 0;
+        }
+
+        .right-text p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .blue-section {
+            padding: 50px 0;
+        }
+
+        .small-cards {
+            width: 90%;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-bottom: 35px;
+        }
+
+        .card {
+            width: 100%;
+            height: 130px;
+            padding: 20px;
+            font-size: 1.1rem;
+            line-height: 1.3rem;
+        }
+
+        .big-card {
+            width: 90%;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .big-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .big-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            overflow-wrap: break-word;
+        }
+
+        .back-btn {
+            margin: 25px auto;
+            padding: 12px 25px;
+        }
+
+        .footer {
+            padding: 25px 15px;
+            font-size: 0.85rem;
+        }
+    }
+
+    /* CELULARES MENORES */
+    @media (max-width: 400px) {
+
+        .top-bar {
+            padding: 10px;
+        }
+
+        .top-bar img {
+            height: 30px;
+        }
+
+        .top-bar h1 {
+            font-size: 1.05rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+        }
+
+        .top-container {
+            padding: 15px;
+        }
+
+        .right-text p {
+            font-size: 1rem;
+        }
+
+        .card {
+            height: 115px;
+            font-size: 1rem;
+        }
+
+        .big-card {
+            padding: 20px;
+        }
+
+        .big-card p {
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+
+        .footer {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <img src="arararound.png">
+    <h1>MANUAL DO RECRUTA</h1>
+</div>
+
+<div class="top-section">
+    <h2 class="section-title">CURSOS COMPLEMENTARES</h2>
+
+    <div class="top-container">
+        <div class="right-text">
+            <p>
+                Cursos complementares são formações que são realizados fora da grade curricular para o enriquecimento de habilidades técnicas e educacionais.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="blue-section">
+
+    <div class="small-cards">
+        <div class="card"><strong>Cursos de línguas</strong></div>
+        <div class="card"><strong>Cursos do pacote office</strong></div>
+        <div class="card"><strong>Cursos de informática</strong></div>
+    </div>
+
+    <!-- CARD GRANDE -->
+    <div class="big-card">
+        <h3>Como organizar as informações</h3>
+        <p>
+• Ordem Cronológica:<br>
+
+-Liste suas experiências começando pela mais recente. Isso facilita a leitura e a compreensão do seu histórico profissional.<br>
+<br>
+<strong>Informações esseciais:</strong><br>
+
+• Nome do Local: Inclua o nome da instituição ou plataforma onde concluíu o curso.<br>
+
+• Curso: Especifique o curso que fez.<br>
+
+• Periodo do curso: Informe as datas de início e término (use "atual" se ainda estiver em andamento).<br>
+<br>
+<strong>ATENÇÃO!</strong><br>
+
+• Tente ser objetivo, NÃO COLOCANDO COISAS QUE NÃO TEM RELAÇÃO COM A VAGA.<br>
+
+Exemplo: Vaga de auxiliar em administração e colocar na parte de cursos complementares que fez aulas de violão (A vaga não tem relação com esse curso, logo, é desnecessário para o curriculo).<br>
+<br>
+
+<strong>Exemplo de cursos complementares relevantes a vaga de emprego:</strong><br>
+Exemplo 1: Vaga de auxiliar administrativo<br>
+Curso de excel avançado - Fundação Bradesco (2025-2026, em andamento).<br>
+<br>
+Exemplo 2: Vaga de desenvolvedor junior<br>
+Curso de HTML e CSS - Plataforma Udemy (2020-2023, concluído).<br>
+<br>
+        </p>
+    </div>
+
+</div>
+
+<a href="curriculo.html" class="back-btn">⬅ Voltar</a>
+
+<div class="footer">
+    © 2026 Manual do Recruta - Todos os direitos reservados.
+</div>
+
+</body>
+</html>

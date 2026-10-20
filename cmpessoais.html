@@ -1,0 +1,557 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Layout Estilo Wix</title> 
+ 
+<style> 
+    * { 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+        font-family: "Poppins", sans-serif; 
+        font-size: 15px; 
+    } 
+ 
+    /* RODAPÉ */ 
+    .footer{ 
+        background:#176bb4; 
+        color:white; 
+        text-align:center; 
+        padding:30px; 
+        font-size:0.9rem; 
+    } 
+ 
+    body { 
+        background: #d7d7e8; 
+        font-size: 19px; 
+        overflow-x: hidden; 
+    } 
+ 
+    /* BARRA AZUL DO MANUAL DO RECRUTA */ 
+    .top-bar { 
+        width: 100%; 
+        background: #176bb4; 
+        padding: 10px 30px; 
+        display: flex; 
+        align-items: center; 
+        gap: 12px; 
+    } 
+ 
+    .top-bar img { 
+        height: 45px; 
+    } 
+ 
+    .top-bar h1 { 
+        color: white; 
+        font-size: 1.6rem; 
+        font-weight: 700; 
+        letter-spacing: 1px; 
+    } 
+ 
+    /* SEÇÃO SUPERIOR */ 
+    .top-section { 
+        width: 100%; 
+        padding: 40px 0; 
+        background: linear-gradient(to bottom, #c9c9dc, #d4d4e7); 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        margin-top: 0; 
+    } 
+ 
+    .section-title { 
+        width: 90%; 
+        max-width: 1500px; 
+        margin-bottom: 15px; 
+        font-size: 1.4rem; 
+        font-weight: 700; 
+        color: #1a1a1a; 
+        letter-spacing: 1px; 
+        text-align: center; 
+    } 
+ 
+    .top-container { 
+        width: 70%; 
+        max-width: 1500px; 
+        background: white; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 20px; 
+        padding: 40px; 
+        margin-bottom: 40px; 
+    } 
+ 
+    /* TEXTO CENTRALIZADO */ 
+    .right-text { 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        width: 100%; 
+        padding: 20px 40px; 
+        text-align: center; 
+    } 
+ 
+    .right-text p { 
+        font-size: 1.5rem; 
+        line-height: 2.2rem; 
+        color: #1a1a1a; 
+        text-align: center; 
+        max-width: 1000px; 
+    } 
+ 
+    /* SEÇÃO AZUL */ 
+    .blue-section { 
+        width: 100%; 
+        background: #1d68a6; 
+        background-image: 
+            linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), 
+            linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px); 
+        background-size: 150px 150px; 
+        padding: 80px 0; 
+        position: relative; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        color: white; 
+    } 
+ 
+    .small-cards { 
+        width: 90%; 
+        max-width: 1500px; 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 25px; 
+        margin-bottom: 50px; 
+    } 
+ 
+    .card { 
+        background: white; 
+        padding: 25px; 
+        border-radius: 18px; 
+        color: #1a1a1a; 
+        font-size: 1.2rem; 
+        line-height: 1.8rem; 
+        font-weight: 500; 
+    } 
+ 
+    .card strong { 
+        font-size: 1.4rem; 
+    } 
+ 
+    .big-card { 
+        width: 90%; 
+        max-width: 1500px; 
+        background: white; 
+        padding: 35px; 
+        border-radius: 18px; 
+        margin-bottom: 60px; 
+        color: #1a1a1a; 
+        font-size: 1.2rem; 
+        line-height: 1.8rem; 
+    } 
+ 
+    .big-card h3 { 
+        font-size: 1.5rem; 
+    } 
+ 
+    .big-card p { 
+        font-size: 1.2rem; 
+        line-height: 1.8rem; 
+    } 
+ 
+    /* NOVA SEÇÃO "O QUE NÃO COLOCAR" */ 
+    .no-section { 
+        width: 100%; 
+        padding: 60px 0 100px 0; 
+        background: #ffffff; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    } 
+ 
+    .no-title { 
+        font-size: 2rem; 
+        font-weight: 700; 
+        margin-bottom: 60px; 
+        color: #1a1a1a; 
+    } 
+ 
+    .no-title span { 
+        color: red; 
+        font-size: inherit; 
+        font-weight: inherit; 
+    } 
+ 
+    .no-grid { 
+        width: 90%; 
+        max-width: 1500px; 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 50px; 
+        text-align: center; 
+    } 
+ 
+    .no-item img { 
+        width: 230px; 
+        height: auto; 
+        border-radius: 8px; 
+        margin-bottom: 20px; 
+    } 
+ 
+    .no-item h3 { 
+        font-size: 1.3rem; 
+        margin-bottom: 15px; 
+        font-weight: 700; 
+    } 
+ 
+    .no-item p { 
+        font-size: 1.2rem; 
+        line-height: 1.9rem; 
+        color: #333; 
+    } 
+ 
+    .back-btn { 
+        margin: 35px auto; 
+        display: inline-block; 
+        padding: 12px 25px; 
+        background: #fff; 
+        color: #0077cc; 
+        border-radius: 10px; 
+        text-decoration: none; 
+        font-weight: 600; 
+        transition: .3s; 
+    } 
+ 
+    /* RESPONSIVIDADE PARA CELULAR */ 
+ 
+    @media (max-width: 768px) { 
+ 
+        .top-bar { 
+            padding: 10px 15px; 
+            gap: 8px; 
+        } 
+ 
+        .top-bar img { 
+            height: 38px; 
+            max-width: 38px; 
+            object-fit: contain; 
+        } 
+ 
+        .top-bar h1 { 
+            font-size: 1.25rem; 
+            letter-spacing: 0.5px; 
+        } 
+ 
+        .top-section { 
+            padding: 30px 0; 
+        } 
+ 
+        .section-title { 
+            width: 90%; 
+            font-size: 1.2rem; 
+            margin-bottom: 15px; 
+        } 
+ 
+        .top-container { 
+            width: 90%; 
+            padding: 20px; 
+            border-radius: 16px; 
+            margin-bottom: 25px; 
+        } 
+ 
+        .right-text { 
+            padding: 10px; 
+        } 
+ 
+        .right-text p { 
+            font-size: 1.05rem; 
+            line-height: 1.7rem; 
+            text-align: center; 
+        } 
+ 
+        .blue-section { 
+            padding: 50px 0; 
+        } 
+ 
+        .small-cards { 
+            width: 90%; 
+            grid-template-columns: 1fr; 
+            gap: 20px; 
+            margin-bottom: 35px; 
+        } 
+ 
+        .card { 
+            padding: 20px; 
+            font-size: 1rem; 
+            line-height: 1.6rem; 
+        } 
+ 
+        .big-card { 
+            width: 90%; 
+            padding: 22px; 
+            border-radius: 16px; 
+            margin-bottom: 40px; 
+        } 
+ 
+        .big-card h3 { 
+            font-size: 1.15rem; 
+            line-height: 1.5rem; 
+        } 
+ 
+        .big-card p { 
+            font-size: 1rem; 
+            line-height: 1.6rem; 
+            overflow-wrap: break-word; 
+        } 
+ 
+        .no-section { 
+            padding: 45px 0 70px 0; 
+        } 
+ 
+        .no-title { 
+            width: 90%; 
+            text-align: center; 
+            font-size: 1.6rem; 
+            margin-bottom: 40px; 
+        } 
+ 
+        .no-grid { 
+            width: 90%; 
+            grid-template-columns: 1fr; 
+            gap: 45px; 
+        } 
+ 
+        .no-item { 
+            width: 100%; 
+        } 
+ 
+        .no-item img { 
+            width: 230px; 
+            max-width: 80%; 
+            height: auto; 
+        } 
+ 
+        .no-item h3 { 
+            font-size: 1.2rem; 
+            margin-bottom: 12px; 
+        } 
+ 
+        .no-item p { 
+            font-size: 1rem; 
+            line-height: 1.65rem; 
+        } 
+ 
+        .back-btn { 
+            margin: 30px auto; 
+            padding: 12px 22px; 
+        } 
+ 
+        .footer { 
+            padding: 25px 15px; 
+            font-size: 0.85rem; 
+        } 
+    } 
+ 
+    /* CELULARES MENORES */ 
+    @media (max-width: 400px) { 
+ 
+        .top-bar h1 { 
+            font-size: 1.1rem; 
+        } 
+ 
+        .top-bar img { 
+            height: 34px; 
+            max-width: 34px; 
+        } 
+ 
+        .top-container { 
+            padding: 15px; 
+        } 
+ 
+        .right-text p { 
+            font-size: 1rem; 
+            line-height: 1.6rem; 
+            text-align: center; 
+        } 
+ 
+        .card { 
+            padding: 18px; 
+            font-size: 0.95rem; 
+            line-height: 1.5rem; 
+        } 
+ 
+        .big-card { 
+            padding: 18px; 
+        } 
+ 
+        .big-card p { 
+            font-size: 0.95rem; 
+            line-height: 1.55rem; 
+        } 
+ 
+        .no-title { 
+            font-size: 1.45rem; 
+        } 
+ 
+        .no-item p { 
+            font-size: 0.95rem; 
+            line-height: 1.55rem; 
+        } 
+    } 
+</style> 
+</head> 
+ 
+<body> 
+ 
+<!-- BARRA AZUL SUPERIOR --> 
+<div class="top-bar"> 
+    <img src="arararound.png" alt="Logo Arara Azul"> 
+    <h1>MANUAL DO RECRUTA</h1> 
+</div> 
+ 
+<!-- SEÇÃO SUPERIOR --> 
+<div class="top-section"> 
+ 
+    <h2 class="section-title">INFORMAÇÕES PESSOAIS</h2> 
+ 
+    <div class="top-container"> 
+
+        <div class="right-text"> 
+            <p> 
+                As empresas precisam do seu currículo para entenderem quem é você. 
+                É o seu marketing pessoal para o recrutador entender suas formações, 
+                experiências, dados e avaliar suas competências para a vaga disponível.  
+            </p> 
+        </div> 
+
+    </div> 
+</div> 
+ 
+<!-- SEÇÃO AZUL COM RETÂNGULOS --> 
+<div class="blue-section"> 
+ 
+    <div class="small-cards"> 
+        <div class="card"> 
+            <strong>Informações pessoais</strong><br> 
+            Mostra dados como nome, contato e cidade. 
+            Cuidado com informações desnecessárias ou podem prejudicar a sua candidatura. 
+        </div> 
+ 
+        <div class="card"> 
+            <strong>Objetivos profissionais</strong><br> 
+            Explica qual o seu objetivo, alinhado com a área desejada, mostrando sua intenção e foco profissional. 
+        </div> 
+ 
+        <div class="card"> 
+            <strong>Formação acadêmica</strong><br> 
+            Mostra seus cursos, certificados e formações. Sempre do mais recente para o mais antigo. 
+        </div> 
+ 
+        <div class="card"> 
+            <strong>Experiências</strong><br> 
+            Descreve experiências profissionais e também alternativas caso você ainda não tenha trabalhado. 
+        </div> 
+ 
+        <div class="card"> 
+            <strong>Habilidades</strong><br> 
+            Destaca suas habilidades no ambiente de trabalho e competências importantes para empresas. 
+        </div> 
+ 
+        <div class="card"> 
+            <strong>Cursos</strong><br> 
+            Mostra cursos complementares que podem fortalecer seu currículo e melhorar suas competências. 
+        </div> 
+    </div> 
+ 
+    <div class="big-card"> 
+        <h3>Informações Pessoais e Contato</h3> 
+        <p> 
+            As primeiras informações do currículo devem permitir que a empresa entre em contato com você de forma eficiente:<br> 
+            • nome completo;<br> Exp: João da Silva Santos<br> 
+            • idade (atual);<br> 
+            • bairro e cidade (NÃO colocar o endereço completo, como rua e número da casa);<br> Exp: Vila Madalena - São Paulo<br> 
+            • telefone e número de celular e\ou e-mail, válido, formal e atualizado;<br> Exp: (DDD conforme sua localização) 99123-4567, joao.santos@gmail.com<br> 
+        </p><br> 
+ 
+        <h3>Objetivo ou Resumo Profissional</h3> 
+        <p> 
+            Um objetivo claro ou resumo profissional ajuda o recrutador a entender sua área de interesse e como você pode contribuir.<br> 
+            É recomendado incluir:<br> 
+            Um objetivo claro ou resumo profissional indicando a posição ou área de interesse;<br> 
+            Breve descrição das suas competências e como pode contribuir para a empresa.<br> 
+            <strong>Exemplo:</strong><br> 
+            Profissional experiente: Analista de Marketing com 5 anos de experiência em gestão de tráfego pago e redes sociais. Foco em otimizar campanhas para aumentar a captação de clientes e o engajamento da marca.<br> 
+            Início de carreira: Estudante de Administração em busca da primeira oportunidade na área financeira. Habilidade em organização de dados e Excel intermediário."<br> 
+        </p><br> 
+ 
+        <h3>Experiência Profissional</h3> 
+        <p> 
+            Deve detalhar suas experiências relevantes de forma concisa, incluindo:<br> 
+            • Cargos ocupados e período de atividade;<br> 
+            Exp: Gestão de dados administrativos (2020- 2022).<br> 
+            • Nome da empresa e cidade;<br> 
+            Exp: Empresa ABC- Campinas.<br> 
+            • Em caso de currículo para primeiro emprego ou estágios, o trabalho voluntário ou projetos acadêmicos também podem ser incluídos no currículo como CURSOS COMPLEMENTARES ou ATIVIDADES EXTRACURRICULARES<br> 
+            Exp: Trabalho voluntário ONG: XYZ (2017-2019).<br> 
+            Projeto para incluir sustentabilidade no ambiente escolar (2010).<br> 
+        </p><br> 
+ 
+        <h3>Formação Acadêmica e Certificações</h3> 
+        <p> 
+            Coloque cursos, formações e certificações em ordem do mais recente para o mais antigo;<br> 
+            Cursos como de graduação, pós-graduação ou técnico, com instituição e ano de conclusão;<br> 
+            Certificações e cursos complementares relevantes, citando instituição e data de conclusão;<br> 
+            É desnecessário incluir ensino médio ou fundamental se já possui graduação.<br> 
+        </p> 
+    </div> 
+</div> 
+ 
+<!-- NOVA SEÇÃO "O QUE NÃO COLOCAR" --> 
+<div class="no-section"> 
+    <h2 class="no-title">O QUE <span>NÃO</span> COLOCAR:</h2> 
+ 
+    <div class="no-grid"> 
+ 
+        <div class="no-item"> 
+            <h3>FOTOS</h3> 
+            
+            <p> 
+                Fotos, principalmente selfies e imagens descontraídas, não são bem-vistas pelos avaliadores.   
+                Uma foto inadequada pode fazer seu currículo ser descartado logo na primeira etapa. A foto do candidato só é necessária quando a vaga exige. 
+            </p> 
+        </div> 
+ 
+        <div class="no-item"> 
+            <h3>ENDEREÇO</h3> 
+           
+            <p> 
+                Não coloque endereço completo, como rua e número de casa. Isso protege sua privacidade e evita possíveis imprevistos.   
+                A informação que é realmente necessária é o bairro, cidade e estado. 
+            </p> 
+        </div> 
+ 
+        <div class="no-item"> 
+            <h3>MUITO TEXTO</h3> 
+           
+            <p> 
+                Textos longos demais deixam o currículo cansativo.   
+                O recrutador quer objetividade currículos com excesso de texto podem ser eliminados. 
+            </p> 
+        </div> 
+ 
+    </div> 
+</div> 
+ 
+<a href="curriculo.html" class="back-btn">⬅ Voltar</a> 
+ 
+<div class="footer"> 
+    © 2026 Manual do Recruta - Todos os direitos reservados. 
+</div> 
+ 
+</body> 
+</html>
+
+

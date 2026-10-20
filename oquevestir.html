@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual do Recruta</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background:#d7d7e8;
+}
+
+/* TOPO */
+.top-bar{
+    width:100%;
+    background:#176bb4;
+    padding:15px 30px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.top-bar img{
+    height:45px;
+}
+
+.top-bar h1{
+    color:white;
+    font-size:1.6rem;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* TITULO */
+.section-title{
+    text-align:center;
+    margin:50px 0 30px 0;
+    font-size:2rem;
+    font-weight:700;
+}
+
+/* SEÇÃO AZUL */
+.blue-section{
+    width:100%;
+    background:#1d68a6;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size:150px 150px;
+    padding:80px 0;
+    display:flex;
+    justify-content:center;
+}
+
+.big-card{
+    width:90%;
+    max-width:1100px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    animation:fadeUp 1s ease;
+}
+
+.big-card h3{
+    font-size:1.4rem;
+    margin-bottom:15px;
+}
+
+.big-card p{
+    margin-bottom:20px;
+    line-height:1.6rem;
+}
+
+/* BLOCO MARKETING DAS IMAGENS */
+.image-group{
+    margin-bottom:60px;
+    text-align:center;
+}
+
+.image-label{
+    font-weight:700;
+    margin-bottom:25px;
+    font-size:1.3rem;
+}
+
+.image-label.aprovado{
+    color:#1e8e3e;
+}
+
+.image-label.evitar{
+    color:#c62828;
+}
+
+.images-row{
+    display:flex;
+    gap:40px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.image-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
+    transition:0.4s;
+}
+
+.image-card img{
+    width:280px;
+    display:block;
+    transition:0.4s;
+}
+
+.image-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 30px 50px rgba(0,0,0,0.18);
+}
+
+.image-card:hover img{
+    transform:scale(1.06);
+}
+
+/* DICAS */
+.tips-section{
+    padding:80px 5%;
+    background:#f4f4f8;
+    text-align:center;
+}
+
+.tips-section h2{
+    font-size:2rem;
+    margin-bottom:50px;
+}
+
+.tips-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.tip-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.tip-card:hover{
+    transform:translateY(-8px);
+}
+
+/* ENTREVISTA ONLINE */
+.online-section{
+    padding:80px 10%;
+    background:white;
+    text-align:center;
+}
+
+.online-section h2{
+    margin-bottom:30px;
+    font-size:2rem;
+}
+
+.online-section ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.online-section li{
+    margin:12px 0;
+}
+
+/* RODAPÉ */
+.footer{
+    background:#176bb4;
+    color:white;
+    text-align:center;
+    padding:30px;
+    font-size:0.9rem;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+    .big-card{
+        padding:25px;
+    }
+}
+.back-btn {
+    margin: 35px auto;
+    display: inline-block;
+    padding: 12px 25px;
+    background: #fff;
+    color: #0077cc;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+    }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+    <img src="arararound.png" alt="Logo">
+    <h1>MANUAL DO RECRUTA</h1>
+</div>
+
+<h2 class="section-title">O QUE VESTIR EM UMA ENTREVISTA?</h2>
+
+<div class="blue-section">
+    <div class="big-card">
+
+        <h3>Roupa mais formal, não estar "desleixado", sem camisetas de time ou política, sem chapéus ou coisas do gênero.</h3>
+
+        <p>
+        <li>Para cargos administrativos ou corporativos, opte por roupas discretas e cores neutras como preto, azul-marinho, branco ou cinza. </li> 
+        <li>Prefira peças limpas, bem passadas e organizadas.</li>
+        <li>Caso peçam foto, não faça poses, nem caretas ou sinais com as mãos e use roupas apropriadas, com uma cor neutra de fundo</li>
+        <li>Não use roupas curtas ou cheias de estampa.</li>
+        </p>
+
+        <p>
+      
+        </p>
+
+        <h3>Ambientes diferentes, como moda ou estúdios criativos</h3>
+
+        <p>
+        <li>Nesses ambientes você tem mais liberdade no modo de se vestir e pode ser mais autêntico, porém sempre de maneira profissional e adequada.</li>
+        </p>
+
+    </div>
+</div>
+
+<div class="tips-section">
+    <h2>Dicas Importantes</h2>
+
+    <div class="tips-grid">
+        <div class="tip-card">
+            <h3>Decotes e regatas</h3>
+            <p>Evite exposição excessiva.</p>
+        </div>
+
+        <div class="tip-card">
+            <h3>Higiene</h3>
+            <p>Roupas limpas e bem cuidadas são essenciais.</p>
+        </div>
+
+        <div class="tip-card">
+            <h3>Calçados</h3>
+            <p>Prefira sapatos fechados e em bom estado.</p>
+        </div>
+    </div>
+</div>
+
+<div class="online-section">
+    <h2>Entrevista Online</h2>
+
+    <p>
+    Mesmo online, mantenha postura profissional e ambiente adequado.
+    </p>
+
+    <ul>
+        <li>✔ Prefira cores neutras.</li>
+        <li>✔ Evite estampas exageradas.</li>
+        <li>✔ Cuide da iluminação.</li>
+        <li>✔ Mantenha postura adequada.</li>
+    </ul>
+</div>
+
+<a href="entrevista.html" class="back-btn">⬅ Voltar</a>
+<div class="footer">
+    © 2026 Manual do Recruta - Todos os direitos reservados.
+</div>
+</body>
+</html>

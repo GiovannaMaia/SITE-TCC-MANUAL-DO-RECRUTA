@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Estilo Wix</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+    }
+
+    /* RODAPÉ */
+    .footer{
+        background:#176bb4;
+        color:white;
+        text-align:center;
+        padding:30px;
+        font-size:0.9rem;
+    }
+
+    body {
+        background: #d7d7e8;
+    }
+
+    /* BARRA AZUL DO MANUAL DO RECRUTA */
+    .top-bar {
+        width: 100%;
+        background: #176bb4;
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .top-bar img {
+        height: 45px;
+    }
+
+    .top-bar h1 {
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    /* SEÇÃO SUPERIOR */
+    .top-section {
+        width: 100%;
+        padding: 40px 0;
+        background: linear-gradient(to bottom, #c9c9dc, #d4d4e7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .section-title {
+        width: 90%;
+        max-width: 1500px;
+        margin-bottom: 15px;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .top-container {
+        width: 80%;
+        max-width: 1500px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 40px;
+    }
+
+    .right-text {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .right-text p {
+        font-size: 1.5rem;
+        line-height: 1.6rem;
+        color: #1a1a1a;
+        text-align: center;
+    }
+
+    /* SEÇÃO AZUL */
+    .blue-section {
+        width: 100%;
+        background: #1d68a6;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+        background-size: 150px 150px;
+        padding: 80px 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+
+    .small-cards {
+        width: 90%;
+        max-width: 1500px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        color: #1a1a1a;
+        font-size: 21px;
+        line-height: 2.0rem;
+        font-weight: 500;
+    }
+
+    .card strong {
+        font-size: 21px;
+    }
+
+    .big-card {
+        width: 90%;
+        max-width: 1500px;
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        margin-bottom: 60px;
+        color: #1a1a1a;
+        font-size: 20px;
+    }
+
+    .big-card strong {
+        font-size: 20px;
+    }
+
+    .big-card h3 {
+        font-size: 20px;
+    }
+
+    /* TAMANHO DOS EXEMPLOS */
+    .big-card .exemplo {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    /* NOVA SEÇÃO "O QUE NÃO COLOCAR" */
+    .no-section {
+        width: 100%;
+        padding: 60px 0 100px 0;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .no-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 60px;
+        color: #1a1a1a;
+    }
+
+    .no-title span {
+        color: red;
+    }
+
+    .no-grid {
+        width: 90%;
+        max-width: 1500px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        text-align: center;
+    }
+
+    .no-item img {
+        width: 230px;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .no-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .no-item p {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        color: #333;
+    }
+
+    .back-btn {
+        margin: 35px auto;
+        display: inline-block;
+        padding: 12px 25px;
+        background: #fff;
+        color: #0077cc;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+    /* =========================
+       RESPONSIVIDADE
+       ========================= */
+
+    @media (max-width: 768px) {
+
+        .top-bar {
+            padding: 10px 15px;
+            gap: 8px;
+        }
+
+        .top-bar img {
+            height: 38px;
+        }
+
+        .top-bar h1 {
+            font-size: 1.2rem;
+        }
+
+        .top-section {
+            padding: 30px 0;
+        }
+
+        .section-title {
+            width: 92%;
+            font-size: 1.8rem;
+            margin-bottom: 18px;
+        }
+
+        .top-container {
+            width: 92%;
+            padding: 20px;
+            border-radius: 18px;
+        }
+
+        .right-text {
+            padding-left: 0;
+            padding-top: 20px;
+        }
+
+        .right-text p {
+            font-size: 1.15rem;
+            line-height: 1.55rem;
+            text-align: center;
+        }
+
+        .blue-section {
+            padding: 45px 0 80px;
+            background-size: 100px 100px;
+        }
+
+        .small-cards {
+            width: 92%;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            padding: 22px;
+            font-size: 18px;
+            line-height: 1.65rem;
+        }
+
+        .card strong {
+            font-size: 18px;
+        }
+
+        .big-card {
+            width: 92%;
+            padding: 22px;
+            font-size: 17px;
+            line-height: 1.5rem;
+            margin-bottom: 60px;
+            overflow-wrap: break-word;
+        }
+
+        .big-card strong {
+            font-size: 18px;
+        }
+
+        .big-card h3 {
+            font-size: 18px;
+            line-height: 1.5rem;
+        }
+
+        .big-card .exemplo {
+            font-size: 20px;
+        }
+
+        .back-btn {
+            margin: 35px auto;
+            padding: 12px 25px;
+        }
+
+        .footer {
+            padding: 30px 15px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* CELULARES PEQUENOS */
+    @media (max-width: 480px) {
+
+        .top-bar {
+            padding: 9px 12px;
+        }
+
+        .top-bar img {
+            height: 34px;
+        }
+
+        .top-bar h1 {
+            font-size: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+        }
+
+        .top-container {
+            width: 94%;
+            padding: 16px;
+        }
+
+        .right-text p {
+            font-size: 1.05rem;
+            line-height: 1.45rem;
+            text-align: center;
+        }
+
+        .small-cards {
+            width: 94%;
+        }
+
+        .card {
+            padding: 20px;
+            font-size: 17px;
+            line-height: 1.55rem;
+        }
+
+        .card strong {
+            font-size: 17px;
+        }
+
+        .big-card {
+            width: 94%;
+            padding: 18px;
+            font-size: 16px;
+            line-height: 1.45rem;
+            margin-bottom: 60px;
+        }
+
+        .big-card strong {
+            font-size: 17px;
+        }
+
+        .big-card h3 {
+            font-size: 17px;
+            line-height: 1.45rem;
+        }
+
+        .big-card .exemplo {
+            font-size: 19px;
+        }
+
+        .back-btn {
+            margin: 35px auto;
+            padding: 12px 25px;
+        }
+
+        .footer {
+            padding: 30px 12px;
+            font-size: 0.9rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- BARRA AZUL DO MANUAL DO RECRUTA -->
+<div class="top-bar">
+    <img src="arararound.png" alt="Logo Arara Azul">
+    <h1>MANUAL DO RECRUTA</h1>
+</div>
+
+<!-- SEÇÃO SUPERIOR -->
+<div class="top-section">
+
+    <h2 class="section-title">FORMAÇÃO ACADÊMICA</h2>
+
+    <div class="top-container">
+
+        <div class="right-text">
+            <p>
+Formação acadêmica é a parte do currículo destinada à apresentação da sua escolaridade, abrangendo a educação básica, cursos técnicos, graduação e pós-graduação. Ela tem como objetivo demonstrar seu nível de conhecimento teórico, sua base técnica e sua preparação para exercer determinada função.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SEÇÃO AZUL COM RETÂNGULOS -->
+<div class="blue-section">
+
+    <div class="small-cards">
+        <div class="card">
+            <strong>Educação básica: Ensino médio, apenas se não possuir superior ou for recém formado.</strong><br>
+          
+        </div>
+
+        <div class="card">
+            <strong>Ensino técnico: Cursos profissionalizantes de nível médio.</strong><br>
+           
+        </div>
+
+        <div class="card">
+            <strong>Graduação: Bachalerados, licenciaturas e cursos tecnólogos.<br>
+            Pós graduação: Especializações, MBAs, mestrados e doutorados.</strong><br>
+           
+        </div>
+        
+    </div>
+
+    <div class="big-card">
+        A posição dessa seção no currículo não é fixa, pois depende da sua situação profissional.<br>
+         Caso você já possua experiência no mercado de trabalho, é recomendado coloca-la após a seção de experiência profissional. Se for recém-formado ou não tiver experiências relevantes, o ideal é posicioná-la no início do currículo,<br> logo após o resumo profissional.<br>
+Priorize a formação que mais tenha relação com o cargo pretendido.
+As formações devem ser organizadas em ordem cronológica inversa, ou seja, da mais recente para a mais antiga, colocando primeiro as qualificações de maior nível.<br>
+Deve-se incluir, nessa sequência, o nome e o nível do curso, o nome da instituição de ensino e sua localização, e, por fim, o ano de início e de conclusão (caso ainda esteja em andamento, pode colocar “em curso” ou “em andamento”). Se você iniciou uma graduação, mas precisou interrompê-la (seja por trancamento ou desistência), avalie se essa informação é relevante para a vaga. Caso seja, inclua-a algo como “graduação incompleta” ou “Interrompido em xxxx” ou informe a nova previsão
+de conclusão, se a interrupção for temporária.<br>
+Caso você tenha pouca experiência profissional, vale acrescentar mais detalhes para fortalecer a sua candidatura.<br> Você pode incluir coisas como média final no curso, principais disciplinas e conquistas relevantes.<br>
+<br>
+ <strong class="exemplo">Exemplo 1</strong><br>
+Mestrado em Comunicação Social | USP - Universidade de São Paulo (2018 - em andamento)<br>
+Bacharelado em jornalismo | Univesidade Federal de São Carlos, São Carlos, SP (2020 - 2024)<br>
+<br>
+<strong class="exemplo">Exemplo 2:</strong> <br>
+Bacharelado em Administração | UFRJ - Rio de Janeiro/RJ (2024 - Interrompido em 2025)<br>
+<br>
+<strong class="exemplo">Exemplo 3:</strong><br>
+Doutorado em Biologia Molecular | Universidade de São Paulo - São Paulo/SP (2017 - 2021)<br>
+Mestrado em Biotecnologia, Bolsista CAPES | Universidade de São Paulo - São Paulo/SP (2014 - 2016)<br>
+Bacharelado em Ciências Biológicas | Universidade Estadual de Campinas - Campinas/SP (2009 - 2013)<br>
+<br>
+<h3>Mesmo que você possua apenas o Ensino Fundamental ou Ensino Médio, é fundamental informar sua escolaridade no currículo.</h3><br>
+<br>
+<strong class="exemplo">Exemplo 4:</strong><br>
+Ensino Fundamental Completo | Escola Estadual Olga Cury - Santos/SP (2002 - 2011)<br>
+<br>
+<strong class="exemplo">Exemplo 5:</strong><br>
+Ensino Médio completo | Colégio Estadual do Paraná - Curitiba (2007 - 2010)<br>
+        </p>
+
+        </div>
+</div>
+<a href="curriculo.html" class="back-btn">⬅ Voltar</a>
+<div class="footer">
+    © 2026 Manual do Recruta - Todos os direitos reservados.
+</div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Manual do Recruta</title>
+
+  <!-- SEU CSS ORIGINAL -->
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+
+  <!-- CSS APENAS DAS ABAS -->
+  <style>
+
+    /* ==========================================
+       ÁREA "AQUI VOCÊ VAI APRENDER"
+       ========================================== */
+
+    .abas {
+      width: 85%;
+      max-width: 1100px;
+      margin: 70px auto;
+    }
+
+
+    /* Título */
+
+    .titulo-abas {
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 auto 50px auto;
+    }
+
+
+    /* ==========================================
+       CADA ABA
+       ========================================== */
+
+    .aba {
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* Título clicável */
+
+    .aba summary {
+      list-style: none;
+      cursor: pointer;
+
+      font-size: 26px;
+      font-weight: bold;
+
+      padding: 25px 15px;
+
+      transition: 0.2s;
+    }
+
+
+    /* Remove a setinha padrão do navegador */
+
+    .aba summary::-webkit-details-marker {
+      display: none;
+    }
+
+
+    /* Nossa própria setinha */
+
+    .aba summary::before {
+
+      content: "⌄";
+
+      display: inline-block;
+
+      margin-right: 15px;
+
+      font-size: 24px;
+
+      transition: transform 0.2s ease;
+    }
+
+
+    /* Quando a aba estiver aberta */
+
+    .aba[open] summary::before {
+
+      transform: rotate(180deg);
+
+    }
+
+
+    /* Efeito ao passar o mouse */
+
+    .aba summary:hover {
+
+      opacity: 0.75;
+
+    }
+
+
+    /* ==========================================
+       TEXTO DENTRO DA ABA
+       ========================================== */
+
+    .texto-aba {
+
+      padding: 5px 55px 30px 55px;
+
+      font-size: 19px;
+
+      line-height: 1.6;
+    }
+
+
+    .texto-aba p {
+
+      margin: 10px 0;
+
+    }
+
+
+    /* ==========================================
+       CELULAR
+       ========================================== */
+
+    @media (max-width: 768px) {
+
+      .abas {
+
+        width: 90%;
+
+      }
+
+
+      .titulo-abas {
+
+        font-size: 26px;
+
+      }
+
+
+      .aba summary {
+
+        font-size: 21px;
+
+        padding: 20px 5px;
+
+      }
+
+
+      .texto-aba {
+
+        padding: 5px 20px 25px 35px;
+
+        font-size: 17px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==========================================
+       CABEÇALHO
+       ========================================== -->
+
+  <header>
+
+    <img
+      src="arararound.png"
+      alt="Logo Arara Azul"
+      class="imglg"
+    >
+
+    <h1>MANUAL DO RECRUTA</h1>
+
+  </header>
+
+
+
+  <!-- ==========================================
+       PARTE PRINCIPAL
+       ========================================== -->
+
+  <main>
+
+    <img
+      src="lucaa.png"
+      alt="Arara Azul"
+      class="imagem"
+    >
+
+
+    <div class="conteudo">
+
+      <h2>
+
+        Quer entrar no
+        <span class="destaque">mercado de trabalho</span>
+        e não sabe o que fazer?
+
+        <br>
+
+        O
+        <span class="destaque">primeiro passo</span>
+        para sua
+        <span class="destaque">carreira</span>
+        pode começar aqui!
+
+      </h2>
+
+
+
+      <!-- BOTÕES -->
+
+      <div class="botoes">
+
+        <button
+          class="btn-verde"
+          onclick="window.location.href='cadastro.html'"
+        >
+
+          COMECE AGORA
+
+        </button>
+
+
+        <button
+          class="btn-branco"
+          onclick="window.location.href='login.html'"
+        >
+
+          JÁ TENHO UMA CONTA
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- ==========================================
+       RODAPÉ
+       ========================================== -->
+
+  <footer>
+
+    &copy; 2026 Manual do Recruta.
+    Todos os direitos reservados.
+
+  </footer>
+
+
+
+  <!-- ==========================================
+       AQUI VOCÊ VAI APRENDER
+       ========================================== -->
+
+  <div class="abas">
+
+
+    <p class="destaque titulo-abas">
+
+    </p>
+
+
+
+    <!-- ========================================
+         ABA 1 — QUEM SOMOS
+         ======================================== -->
+
+    <details class="aba">
+
+      <summary>
+
+        Quem somos?
+
+      </summary>
+
+
+      <div class="texto-aba">
+
+        <p>
+
+          O Manual do Recruta é uma plataforma criada por um grupo de TCC da Escola Técnica Armando Pannunzio
+          para ajudar jovens a dar os primeiros passos na criação de um currículo para entrar
+          no mercado de trabalho.
+
+        </p>
+
+
+        <p>
+
+        </p>
+
+      </div>
+
+    </details>
+
+
+
+    <!-- ========================================
+         ABA 2 — CURRÍCULO
+         ======================================== -->
+
+    <details class="aba">
+
+      <summary>
+
+        Como fazer um currículo de sucesso?
+
+      </summary>
+
+
+      <div class="texto-aba">
+
+        <p>
+
+          Aprenda como montar um currículo claro,
+          organizado e profissional, destacando suas
+          principais habilidades, experiências e objetivos.
+
+        </p>
+
+
+        <p>
+
+          Mesmo que você ainda não tenha experiência
+          profissional, é possível destacar cursos,
+          projetos, conhecimentos e outras habilidades.
+
+        </p>
+
+      </div>
+
+    </details>
+
+
+
+    <!-- ========================================
+         ABA 3 — ENTREVISTA
+         ======================================== -->
+
+    <details class="aba">
+
+      <summary>
+
+        Como se comportar em uma entrevista?
+
+      </summary>
+
+
+      <div class="texto-aba">
+
+        <p>
+
+          Descubra como se preparar para uma entrevista
+          de emprego, como se comunicar adequadamente
+          e quais atitudes podem transmitir confiança
+          e profissionalismo.
+
+        </p>
+
+
+        <p>
+
+          Também apresentamos dicas para lidar com o
+          nervosismo e responder às perguntas mais
+          comuns dos recrutadores.
+
+        </p>
+
+      </div>
+
+    </details>
+    <!-- ========================================
+         ABA — ATENÇÃO
+         ======================================== -->
+
+    <details class="aba">
+
+      <summary>
+
+        ATENÇÃO!
+
+      </summary>
+
+
+      <div class="texto-aba">
+
+        <p>
+Como somos uma equipe de TCC de ensino médio integrado ao técnico de Administração, não conseguimos o acesso a banco de dados. Consequentemente,
+          para acessar o site, clique em "Já tenho uma conta" e utilize:<br>
+          email -> teste@recruta.com<br>
+          senha -> 1234<br>
+
+        </p>
+
+
+        <p>
+
+        </p>
+
+      </div>
+
+    </details>
+
+
+  </div>
+
+
+</body>
+
+</html>

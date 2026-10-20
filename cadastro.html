@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Manual do Recruta</title>
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Lado esquerdo - Branding -->
+    <div class="left">
+      <div class="overlay">
+        <img src="lucaa.png" alt="Logo Arara Azul" class="logo">
+        <h1>Junte-se ao Manual do Recruta</h1>
+        <p>Cadastre-se e comece agora sua jornada no mercado de trabalho!</p>
+      </div>
+    </div>
+
+    <!-- Lado direito - Formulário -->
+    <div class="right">
+      <div class="cadastro-box">
+        <h2>Crie sua conta</h2>
+        <p>É rápido, fácil e gratuito!</p>
+
+        <form id="cadastroForm">
+          <div class="input-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+          </div>
+
+          <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+          </div>
+
+          <div class="input-group">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Crie uma senha" required>
+          </div>
+
+          <div class="input-group">
+            <label for="confirmar">Confirmar senha</label>
+            <input type="password" id="confirmar" placeholder="Repita sua senha" required>
+          </div>
+
+          <button type="submit" class="btn-cadastro">Cadastrar</button>
+        </form>
+
+        <p class="login-texto">
+          Já tem uma conta?
+          <a href="login.html">Entre aqui</a>
+        </p>
+
+        <p id="mensagem" class="mensagem"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Manual do Recruta. Todos os direitos reservados.
+  </footer>
+
+  <script src="cadastro.js"></script>
+</body>
+</html>

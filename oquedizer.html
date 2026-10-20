@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual do Recruta - O Que Dizer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+ 
+<style> 
+ 
+*{ 
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+    font-family:'Poppins', sans-serif; 
+    font-size: 20px; 
+} 
+ 
+body{ 
+    background:#d7d7e8; 
+} 
+ 
+/* TOPO */ 
+.top-bar{ 
+    width:100%; 
+    background:#176bb4; 
+    padding:15px 30px; 
+    display:flex; 
+    align-items:center; 
+    gap:15px; 
+} 
+ 
+.top-bar img{ 
+    height:45px; 
+} 
+ 
+.top-bar h1{ 
+    color:white; 
+    font-size:1.6rem; 
+    font-weight:700; 
+    letter-spacing:1px; 
+} 
+ 
+/* SEÇÃO SUPERIOR */ 
+.top-section{ 
+    width:100%; 
+    padding:60px 5%; 
+    background:linear-gradient(to bottom,#c9c9dc,#d4d4e7); 
+    display:flex; 
+    flex-direction:column; 
+    align-items:center; 
+} 
+ 
+.section-title{ 
+    font-size:2rem; 
+    font-weight:700; 
+    margin-bottom:40px; 
+} 
+ 
+.top-container{ 
+    width:100%; 
+    max-width:1200px; 
+    background:white; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    border-radius:20px; 
+    padding:40px; 
+    gap:40px; 
+    animation:fadeUp 1s ease; 
+} 
+ 
+.right-text{ 
+    width:100%; 
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    text-align:center; 
+} 
+ 
+.right-text p{ 
+    line-height:1.7rem; 
+    text-align:center; 
+} 
+ 
+/* SEÇÃO AZUL */ 
+.blue-section{ 
+    width:100%; 
+    background:#1d68a6; 
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), 
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px); 
+    background-size:150px 150px; 
+    padding:80px 5%; 
+    display:flex; 
+    justify-content:center; 
+} 
+ 
+.big-card{ 
+    width:100%; 
+    max-width:1100px; 
+    background:white; 
+    padding:40px; 
+    border-radius:20px; 
+    animation:fadeUp 1s ease; 
+} 
+ 
+.big-card h3{ 
+    font-size:1.4rem; 
+    margin-bottom:15px; 
+} 
+ 
+.big-card ul{ 
+    margin-bottom:30px; 
+} 
+ 
+.big-card li{ 
+    margin-bottom:12px; 
+    line-height:1.6rem; 
+} 
+ 
+/* RETÂNGULO DE ALERTA */ 
+.alert-box{ 
+    margin-top:10px; 
+    margin-bottom:10px; 
+    padding:22px 25px; 
+    border-radius:15px; 
+    background:linear-gradient(135deg,#eaf4ff,#dceeff); 
+    border-left:6px solid #176bb4; 
+    box-shadow:0 8px 20px rgba(23,107,180,0.15); 
+    line-height:1.7rem; 
+    font-weight:600; 
+    color:#18344d; 
+    transition:0.3s; 
+} 
+ 
+.alert-box:hover{ 
+    transform:translateY(-3px); 
+    box-shadow:0 12px 25px rgba(23,107,180,0.22); 
+} 
+ 
+/* DICAS EXTRAS */ 
+.extra-section{ 
+    padding:80px 5%; 
+    background:#f4f4f8; 
+    text-align:center; 
+} 
+ 
+.extra-section h2{ 
+    font-size:2rem; 
+    margin-bottom:50px; 
+} 
+ 
+.extra-grid{ 
+    display:grid; 
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); 
+    gap:30px; 
+} 
+ 
+.extra-card{ 
+    background:white; 
+    padding:30px; 
+    border-radius:15px; 
+    box-shadow:0 10px 20px rgba(0,0,0,0.05); 
+    transition:0.3s; 
+} 
+ 
+.extra-card:hover{ 
+    transform:translateY(-8px); 
+} 
+ 
+/* FRASES PODEROSAS */ 
+.phrases-section{ 
+    padding:80px 10%; 
+    background:white; 
+    text-align:center; 
+} 
+ 
+.phrases-section h2{ 
+    font-size:2rem; 
+    margin-bottom:30px; 
+} 
+ 
+.phrases-section p{ 
+    margin-bottom:15px; 
+    font-style:italic; 
+} 
+ 
+/* RODAPÉ */ 
+.footer{ 
+    background:#176bb4; 
+    color:white; 
+    text-align:center; 
+    padding:30px; 
+    font-size:0.9rem; 
+} 
+ 
+/* ANIMAÇÃO */ 
+@keyframes fadeUp{ 
+    from{ 
+        opacity:0; 
+        transform:translateY(40px); 
+    } 
+    to{ 
+        opacity:1; 
+        transform:translateY(0); 
+    } 
+} 
+ 
+/* RESPONSIVO */ 
+@media(max-width:900px){ 
+    .top-container{ 
+        grid-template-columns:1fr; 
+    } 
+} 
+
+.back-btn { 
+    margin: 35px auto; 
+    display: inline-block; 
+    padding: 12px 25px; 
+    background: #fff; 
+    color: #0077cc; 
+    border-radius: 10px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: .3s; 
+    } 
+</style> 
+</head> 
+<body> 
+ 
+<div class="top-bar"> 
+    <img src="arararound.png" alt="Logo"> 
+    <h1>MANUAL DO RECRUTA</h1> 
+</div> 
+ 
+<div class="top-section"> 
+    <h2 class="section-title">O QUE DIZER EM UMA ENTREVISTA?</h2> 
+ 
+    <div class="top-container"> 
+        <div class="right-text"> 
+            <p> 
+           A entrevista não é o fim do mundo. Respire fundo e lembre-se: você foi chamado porque já chamou atenção no currículo. 
+Leve apenas o essencial: documento pessoal, uma caneta, uma garrafinha e o que for realmente necessário para você. 
+            </p> 
+        </div> 
+    </div> 
+</div> 
+ 
+<div class="blue-section"> 
+    <div class="big-card"> 
+ 
+        <h3>O que você DEVE dizer</h3> 
+        <ul> 
+            <li>Demonstrar conhecimento sobre a empresa, missão, visão e valores.</li> 
+            <li>Explicar como suas habilidades podem ajudar nos desafios da vaga.</li> 
+            <li>Ser totalmente verdadeiro sobre suas experiências.</li> 
+            <li>Mostrar interesse genuíno em crescer profissionalmente.</li> 
+        </ul> 
+ 
+        <h3>O que você NÃO deve dizer</h3> 
+        <ul> 
+            <li>Evitar gírias ou palavras informais.</li> 
+            <li>Não falar mal de empregos anteriores.</li> 
+            <li>Não entrar em detalhes pessoais excessivos.</li> 
+            <li>Evitar respostas negativas como “não sei fazer nada”.</li> 
+            <li>Não mentir sobre habilidades — você pode ser testado.</li> 
+        </ul> 
+ 
+        <h3>Conselhos</h3> 
+        <ul> 
+            <li>Buscar entender sobre a empresa, estudar ela.</li> 
+            <li>Buscar sobre a vaga, entender o que faz.</li> 
+            <li>Ser pontual.</li> 
+            <li>Ser educado.</li> 
+            <li>Se tiver mais de uma pessoa na sala, se dirigir todos.</li> 
+            <li>Não falar gírias e palavrão.</li> 
+            <li>Se não tiver mais interesse, fale educadamente que não quer, não seja grosso e nem espere chegar em casa, isso demonstra respeito e responsabilidade.</li> 
+        </ul> 
+ 
+        <div class="alert-box"> 
+            A falta desses comportamentos pode ser eliminatório: respeito, cordialidade e pontualidade. O jeito de falar, com muitas gírias, falar muita coisa e ao mesmo tempo nada, é eliminatório. Discriminação ou julgar por importância também é eliminatório, independente de quem esteja no ambiente, todos merecem ser tratados com educação. 
+        </div> 
+ 
+    </div> 
+</div> 
+ 
+<div class="extra-section"> 
+    <h2>Estratégias</h2> 
+ 
+    <div class="extra-grid"> 
+        <div class="extra-card"> 
+            <h3>Seja Objetivo</h3> 
+            <p>Respostas claras e diretas mostram segurança.</p> 
+        </div> 
+ 
+        <div class="extra-card"> 
+            <h3>Use Exemplos</h3> 
+            <p>Conte situações reais onde demonstrou suas habilidades.</p> 
+        </div> 
+ 
+        <div class="extra-card"> 
+            <h3>Mostre Evolução</h3> 
+            <p>Fale sobre aprendizados e crescimento profissional.</p> 
+        </div> 
+ 
+        <div class="extra-card"> 
+            <h3>Comunicação</h3> 
+            <p>Mantenha contato visual e postura confiante.</p> 
+        </div> 
+    </div> 
+</div> 
+ 
+<a href="entrevista.html" class="back-btn">⬅ Voltar</a> 
+<div class="footer"> 
+    © 2026 Manual do Recruta - Todos os direitos reservados. 
+</div> 
+</body> 
+</html>

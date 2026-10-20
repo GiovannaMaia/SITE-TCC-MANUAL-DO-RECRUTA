@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Perfil - Manual do Recruta</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins", sans-serif;
+}
+/* RODAPÉ */
+.footer{
+    background:#176bb4;
+    color:white;
+    text-align:center;
+    padding:30px;
+    font-size:0.9rem;
+}
+body{
+    background:#d7d7e8;
+}
+
+/* TOPO */
+
+.top-bar{
+    width:100%;
+    background:#176bb4;
+    padding:12px 30px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.top-bar img{
+    height:50px;
+}
+
+.top-bar h1{
+    color:white;
+    font-size:1.5rem;
+}
+
+/* PERFIL */
+
+.profile-section{
+    padding:50px 20px;
+}
+
+.profile-card{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    background:white;
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+}
+
+.profile-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.user-info{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.avatar{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#176bb4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.user-text h2{
+    color:#176bb4;
+    margin-bottom:5px;
+}
+
+.user-text p{
+    color:#555;
+}
+
+/* GALERIA */
+
+.section-title{
+    margin-bottom:25px;
+    color:#176bb4;
+    font-size:1.5rem;
+}
+
+.cv-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.cv-card{
+    background:#f8f8ff;
+    border-radius:20px;
+    padding:25px;
+    border-left:8px solid #176bb4;
+    transition:0.3s;
+}
+
+.cv-card:hover{
+    transform:translateY(-5px);
+}
+
+.cv-card h3{
+    color:#176bb4;
+    margin-bottom:10px;
+}
+
+.cv-card p{
+    color:#555;
+    margin-bottom:20px;
+}
+
+.card-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.card-buttons button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.open-btn{
+    background:#176bb4;
+    color:white;
+}
+
+.delete-btn{
+    background:#e74c3c;
+    color:white;
+}
+
+/* BOTÃO NOVO */
+
+.new-btn{
+    background:linear-gradient(135deg,#176bb4,#1f8bd6);
+    color:white;
+    border:none;
+    padding:16px 30px;
+    border-radius:40px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.new-btn:hover{
+    transform:scale(1.05);
+}
+
+/* SOFT SKILLS */
+
+.skills-section{
+    margin-top:60px;
+}
+
+.skill{
+    margin-bottom:20px;
+}
+
+.skill-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.bar{
+    width:100%;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.fill{
+    height:16px;
+    background:linear-gradient(90deg,#176bb4,#1f8bd6);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:800px){
+
+    .profile-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+.back-btn {
+    margin: 35px auto;
+    display: inline-block;
+    padding: 12px 25px;
+    background: #fff;
+    color: #0077cc;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- TOPO -->
+
+<div class="top-bar">
+    <img src="arararound.png">
+    <h1>MANUAL DO RECRUTA</h1>
+</div>
+
+<!-- PERFIL -->
+
+<div class="profile-section">
+
+    <div class="profile-card">
+
+        <div class="profile-header">
+
+            <div class="user-info">
+
+                <div class="avatar">
+                    U
+                </div>
+
+                <div class="user-text">
+                    <h2>Meu Perfil</h2>
+                    <p>
+                        Organize seus currículos e acompanhe seus resultados.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- BOTÃO NOVO CURRÍCULO -->
+
+            <button 
+                class="new-btn"
+                onclick="window.location.href='modelo.html'"
+            >
+                + Novo Currículo
+            </button>
+
+        </div>
+
+        <!-- GALERIA -->
+
+        <h2 class="section-title">Meus Currículos</h2>
+
+        <div class="cv-grid" id="cvGrid">
+
+        </div>
+
+        <!-- SOFT SKILLS -->
+
+        <div class="skills-section">
+
+            <h2 class="section-title">
+                Resultado das Soft Skills
+            </h2>
+
+            <div id="skillsContainer">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* =========================
+MOSTRAR CURRÍCULOS
+========================= */
+
+function renderizarCurriculos(){
+
+    const grid = document.getElementById("cvGrid");
+
+    grid.innerHTML = "";
+
+    let lista = JSON.parse(
+        localStorage.getItem("curriculos")
+    ) || [];
+
+    if(lista.length === 0){
+
+        grid.innerHTML = `
+            <p style="color:#555;">
+                Nenhum currículo salvo ainda.
+            </p>
+        `;
+
+        return;
+
+    }
+
+    lista.forEach((cv,index)=>{
+
+        grid.innerHTML += `
+
+        <div class="cv-card">
+
+            <h3>${cv.nomeCurriculo}</h3>
+
+            <p>
+                ${cv.cargo || "Sem cargo definido"}
+            </p>
+
+            <div class="card-buttons">
+
+                <button 
+                    class="open-btn"
+                    onclick="abrirCurriculo(${index})"
+                >
+                    Abrir
+                </button>
+
+                <button 
+                    class="delete-btn"
+                    onclick="excluirCurriculo(${index})"
+                >
+                    Excluir
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+/* =========================
+ABRIR CURRÍCULO
+========================= */
+
+function abrirCurriculo(index){
+
+    let lista = JSON.parse(
+        localStorage.getItem("curriculos")
+    ) || [];
+
+    const cv = lista[index];
+
+    localStorage.setItem("cv_nome", cv.nome);
+
+    localStorage.setItem("cv_cargo", cv.cargo);
+
+    localStorage.setItem("cv_telefone", cv.telefone);
+
+    localStorage.setItem("cv_email", cv.email);
+
+    localStorage.setItem("cv_endereco", cv.endereco);
+
+    localStorage.setItem("cv_objetivo", cv.objetivo);
+
+    localStorage.setItem("cv_formacao", cv.formacao);
+
+    localStorage.setItem("cv_experiencia", cv.experiencia);
+
+    localStorage.setItem("cv_cursos", cv.cursos);
+
+    localStorage.setItem("cv_habilidades", cv.habilidades);
+
+    window.location.href = "modelo.html";
+
+}
+
+/* =========================
+EXCLUIR CURRÍCULO
+========================= */
+
+function excluirCurriculo(index){
+
+    let lista = JSON.parse(
+        localStorage.getItem("curriculos")
+    ) || [];
+
+    lista.splice(index,1);
+
+    localStorage.setItem(
+        "curriculos",
+        JSON.stringify(lista)
+    );
+
+    renderizarCurriculos();
+
+}
+
+/* =========================
+SOFT SKILLS
+========================= */
+
+const skillNames = [
+
+    "Criatividade",
+    "Adaptabilidade",
+    "Interação",
+    "Liderança",
+    "Apoio",
+    "Análise",
+    "Empreendedorismo",
+    "Organização"
+
+];
+
+function mostrarSoftSkills(){
+
+    const container = document.getElementById(
+        "skillsContainer"
+    );
+
+    const resultados = JSON.parse(
+        localStorage.getItem("softSkills")
+    );
+
+    if(!resultados){
+
+        container.innerHTML = `
+            <p style="color:#555;">
+                Nenhum teste realizado ainda.
+            </p>
+        `;
+
+        return;
+
+    }
+
+    container.innerHTML = "";
+
+    skillNames.forEach((skill,index)=>{
+
+        const valor = resultados[index];
+
+        container.innerHTML += `
+
+        <div class="skill">
+
+            <div class="skill-header">
+
+                <span>${skill}</span>
+
+                <span>${valor}%</span>
+
+            </div>
+
+            <div class="bar">
+
+                <div 
+                    class="fill"
+                    style="width:${valor}%"
+                ></div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+/* =========================
+INICIAR
+========================= */
+
+renderizarCurriculos();
+
+mostrarSoftSkills();
+
+</script>
+</div>
+<a href="poslogin.html" class="back-btn">⬅ Voltar</a>
+<div class="footer">
+    © 2026 Manual do Recruta - Todos os direitos reservados.
+</div>
+</body>
+</html>

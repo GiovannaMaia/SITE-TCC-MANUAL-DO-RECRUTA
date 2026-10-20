@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual do Recruta - O Que Levar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background:#d7d7e8;
+}
+
+/* TOPO */
+.top-bar{
+    width:100%;
+    background:#176bb4;
+    padding:15px 30px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.top-bar img{
+    height:45px;
+}
+
+.top-bar h1{
+    color:white;
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+/* SEÇÃO SUPERIOR */
+.top-section{
+    padding:60px 5%;
+    background:linear-gradient(to bottom,#c9c9dc,#d4d4e7);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.section-title{
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.top-container{
+    width:100%;
+    max-width:1200px;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:20px;
+    padding:40px;
+    gap:40px;
+    animation:fadeUp 1s ease;
+}
+
+.right-text{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.right-text p{
+    line-height:1.7rem;
+    text-align:center;
+}
+
+/* SEÇÃO AZUL */
+.blue-section{
+    background:#1d68a6;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size:150px 150px;
+    padding:80px 5%;
+    display:flex;
+    justify-content:center;
+}
+
+.big-card{
+    background:white;
+    width:100%;
+    max-width:1100px;
+    padding:40px;
+    border-radius:20px;
+    animation:fadeUp 1s ease;
+}
+
+.big-card li::marker{
+    color:black;
+}
+
+.big-card h3{
+    margin-bottom:20px;
+}
+
+.big-card ul{
+    margin-bottom:30px;
+}
+
+.big-card li{
+    margin-bottom:12px;
+    line-height:1.6rem;
+}
+
+/* DICAS EXTRAS */
+.extra-section{
+    padding:80px 5%;
+    background:#f4f4f8;
+    text-align:center;
+}
+
+.extra-section h2{
+    font-size:2rem;
+    margin-bottom:50px;
+}
+
+.extra-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.extra-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.extra-card:hover{
+    transform:translateY(-8px);
+}
+
+/* CHECKLIST */
+.checklist-section{
+    padding:80px 10%;
+    background:white;
+    text-align:center;
+}
+
+.checklist-section h2{
+    font-size:2rem;
+    margin-bottom:30px;
+}
+
+.checklist-section p{
+    margin-bottom:15px;
+}
+
+/* RODAPÉ */
+.footer{
+    background:#176bb4;
+    color:white;
+    text-align:center;
+    padding:30px;
+    font-size:0.9rem;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+
+    .top-container{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .right-text{
+        width:100%;
+        text-align:center;
+    }
+
+    .right-text p{
+        text-align:center;
+    }
+}
+
+.back-btn{
+    margin:35px auto;
+    display:inline-block;
+    padding:12px 25px;
+    background:#fff;
+    color:#0077cc;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <img src="arararound.png" alt="Logo">
+    <h1>MANUAL DO RECRUTA</h1>
+</div>
+
+<div class="top-section">
+
+    <h2 class="section-title">O QUE LEVAR PARA A ENTREVISTA?</h2>
+
+    <div class="top-container">
+
+        <div class="right-text">
+            <p>
+            A entrevista não é o fim do mundo. Organização transmite preparo.
+            Não é necessário levar bolsas enormes ou objetos desnecessários.
+            Leve apenas o essencial e mantenha tudo organizado.
+            Simplicidade demonstra maturidade e profissionalismo.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div class="blue-section">
+    <div class="big-card">
+
+        <h3>O que você DEVE levar</h3>
+        <ul>
+            <li>Documento com foto (RG ou equivalente).</li>
+            <li>Caneta.</li>
+            <li>Carta de apresentação (opcional, mas agrega valor).</li>
+            <li>Carta de indicação (caso possua).</li>
+            <li>Pequena garrafa de água.</li>
+        </ul>
+
+        <h3>O que você NÃO deve levar</h3>
+        <ul>
+            <li>Alimentos com cheiro forte.</li>
+            <li>Bebidas alcoólicas.</li>
+            <li>Celular no modo sonoro.</li>
+            <li>Acompanhantes (salvo solicitação).</li>
+            <li>Mochilas grandes e volumosas.</li>
+            <li>Objetos pessoais desnecessários.</li>
+            <li>Chiclete durante a entrevista.</li>
+
+            <h3>Levar apenas se pedir</h3>
+
+            <ul>
+                <li>Certificados de cursos e olimpíadas científicas.</li>
+                <li>O currículo.</li>
+                <li>Carta de recomendação.</li>
+            </ul>
+
+        </ul>
+
+    </div>
+</div>
+
+<div class="extra-section">
+
+    <h2>Detalhes</h2>
+
+    <div class="extra-grid">
+
+        <div class="extra-card">
+            <h3>Organização</h3>
+            <p>Use uma pasta simples para guardar documentos.</p>
+        </div>
+
+        <div class="extra-card">
+            <h3>Celular</h3>
+            <p>Coloque no silencioso antes de entrar na empresa.</p>
+        </div>
+
+        <div class="extra-card">
+            <h3>Antecedência</h3>
+            <p>Chegue 10 a 15 minutos antes do horário marcado.</p>
+        </div>
+
+        <div class="extra-card">
+            <h3>Postura</h3>
+            <p>Confiança começa na organização e preparação.</p>
+        </div>
+
+    </div>
+</div>
+
+<a href="entrevista.html" class="back-btn">⬅ Voltar</a>
+
+<div class="footer">
+    © 2026 Manual do Recruta | Preparação gera oportunidade
+</div>
+
+</body>
+</html>
